@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo">farlight</li>
+                <li class="Right">
+                    <a href="page1.html">Content</a>
+                </li>
+                <li>
+                    <a href="page1.html">about</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <center>
+        <div class="table">
+            <table>
+                <tr>
+                    <td>
+                        <img id="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYglt1sZC-DxfA-bC7iI6ikylI7wbDH1LcKQ&usqp=CAU" alt="">
+                        <br><button onclick="changeImage(1)">Change Image</button>
+                    </td>
+                    <td>
+                        <img id="image2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZf4ty-nHgcE0UgHYHRC2Yn-USgxlv5hYNoA&usqp=CAU" alt="">
+                        <br><button onclick="changeImage(2)">Change Image</button>
+                    </td>
+                    <td>
+                        <img id="image3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQidwaygvR8Anb7aM9rqwGjUG2jjCwMuj5jiA&usqp=CAU" alt="">
+                        <br><button onclick="changeImage(3)">Change Image</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Video">
+            <table>
+                <tr>
+                    <td>
+                        <video id="video1" width="350" height="350" autoplay loop>
+                            <source src="a.mp4" type="video/mp4">
+                        </video>
+                        <button onclick="changeVideo(1)">Change Video</button>
+                    </td>
+                    <td>
+                        <video id="video2" width="350" height="350" autoplay loop>
+                            <source src="b.mp4" type="video/mp4">
+                        </video>
+                        <button onclick="changeVideo(2)">Change Video</button>
+                    </td>
+                    <td>
+                        <video id="video3" width="350" height="350" controls>
+                            <source src="a.mp4" type="video/mp4">
+                        </video>
+                        <button onclick="changeVideo(3)">Change Video</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+    <script>
+        // JavaScript to change images
+        const imageSources = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTebIRdOBzt1nGpUoTodY-IIURZ3OOmWEZucA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX5Zz6bXCmQCpnhHxH1NCY2iVSei-4i3fgWw&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNGycMXucqci_5BNgvGtTpbT0HGLMtp6x9qQ&usqp=CAU"];
+        let currentImageIndex = 0;
+
+        function changeImage(mediaNumber) {
+            currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+            document.getElementById(`image${mediaNumber}`).src = imageSources[currentImageIndex];
+        }
+
+        // JavaScript to change videos
+        const videoSources = ["b.mp4", "a.mp4", "a.mp4"];
+        let currentVideoIndex = 0;
+
+        function changeVideo(mediaNumber) {
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+            document.getElementById(`video${mediaNumber}`).src = videoSources[currentVideoIndex];
+        }
+    </script>
+</body>
+</html>
